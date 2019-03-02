@@ -59,7 +59,7 @@ const Spotify = {
         	if (response.ok) {
           	return response.json();
         	} else {
-        		console.log('failed get userID');
+        		console.log('login failed');
         	}
 				}).then(jsonResponse => {
 				userId = jsonResponse.id;
