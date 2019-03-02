@@ -55,13 +55,8 @@ const Spotify = {
 
 		if (playlistName !=='' && trackUris!=='') {
 			return fetch(`${spotifyAPIURIBase}me`, {headers: headers}
-				).then(response => {
-        	if (response.ok) {
-          	return response.json();
-        	} else {
-        		console.log('login failed');
-        	}
-				}).then(jsonResponse => {
+				).then(response => response.json()
+				).then(jsonResponse => {
 				userId = jsonResponse.id;
 				return fetch(`${spotifyAPIURIBase}users/${userId}/playlists`, {
 					headers: headers,
